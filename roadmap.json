@@ -1,0 +1,33 @@
+{
+    "Python": {
+        "Beginner": [
+            "Learn syntax",
+            "Understand data structures",
+            "Practice basic libraries"
+        ],
+        "Intermediate": [
+            "Explore Flask, Django, FastAPI",
+            "Learn data science libraries like pandas and numpy"
+        ],
+        "Advanced": [
+            "Async programming",
+            "Docker and CI/CD pipelines"
+        ]
+    },
+    "Rust": {
+        "Beginner": [
+            "Understand ownership and borrowing",
+            "Learn basic syntax"
+        ],
+        "Intermediate": [
+            "Work with Cargo",
+            "Learn error handling",
+            "Understand async programming"
+        ],
+        "Advanced": [
+            "Build web servers with Actix and Rocket",
+            "Explore WASM",
+            "Learn embedded systems programming"
+        ]
+    }
+}
