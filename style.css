@@ -1110,7 +1110,7 @@ body {
 }
 
 .phase-content {
-    padding: 0 25px 25px;
+    padding: 0 10px 25px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
