@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интерактивная дорожная карта изучения Python и Rust</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Progress Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">🐍 Python &amp; 🦀 Rust Roadmap</h1>
+            <div class="progress-section">
+                <div class="progress-stats">
+                    <span class="progress-text">Прогресс: <span id="progress-percentage">0%</span></span>
+                    <span class="progress-items">(<span id="completed-items">0</span> из <span id="total-items">0</span>)</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation & Filters -->
+    <nav class="nav-bar">
+        <div class="container">
+            <div class="nav-controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="python">🐍 Python</button>
+                    <button class="filter-btn" data-filter="rust">🦀 Rust</button>
+                    <button class="filter-btn" data-filter="frameworks">📚 Фреймворки</button>
+                </div>
+                <div class="nav-actions">
+                    <button class="reset-btn" id="reset-progress">🔄 Сброс</button>
+                    <button class="compare-btn" id="show-comparison">⚖️ Сравнение</button>
+                </div>
+            </div>
+            <div class="phase-navigation">
+                <button class="phase-nav-btn" data-phase="1">Основы Python</button>
+                <button class="phase-nav-btn" data-phase="2">Продвинутый Python</button>
+                <button class="phase-nav-btn" data-phase="3">Фреймворки Python</button>
+                <button class="phase-nav-btn" data-phase="4">Основы Rust</button>
+                <button class="phase-nav-btn" data-phase="5">Продвинутый Rust</button>
+                <button class="phase-nav-btn" data-phase="6">Фреймворки Rust</button>
+                <button class="phase-nav-btn" data-phase="7">Специализация</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Summary Cards -->
+            <div class="summary-section">
+                <div class="summary-card">
+                    <div class="summary-icon">⏱️</div>
+                    <div class="summary-info">
+                        <h3>Общее время</h3>
+                        <p>12-18 месяцев</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🐍</div>
+                    <div class="summary-info">
+                        <h3>Python</h3>
+                        <p>6-10 месяцев</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🦀</div>
+                    <div class="summary-info">
+                        <h3>Rust</h3>
+                        <p>7-10 месяцев</p>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📚</div>
+                    <div class="summary-info">
+                        <h3>Фреймворки</h3>
+                        <p id="framework-count">0 изучено</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline" id="timeline">
+                <!-- Phase 1: Python Basics -->
+                <div class="phase-card" data-phase="1" data-language="python">
+                    <div class="phase-header" onclick="togglePhase(1)">
+                        <div class="phase-number">1</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">🐍 Основы Python</h2>
+                            <p class="phase-duration">1-2 месяца</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-1-content">
+                        <div class="topic-section">
+                            <h3 class="topic-title">Установка и настройка</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-setup-1">
+                                    <span class="checkmark"></span>
+                                    Python 3.10+ с официального сайта
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-setup-2">
+                                    <span class="checkmark"></span>
+                                    IDE: PyCharm, VS Code, Jupyter Notebook
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-setup-3">
+                                    <span class="checkmark"></span>
+                                    Anaconda (опционально)
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-setup-4">
+                                    <span class="checkmark"></span>
+                                    pip и управление пакетами
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Синтаксис Python</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-syntax-1">
+                                    <span class="checkmark"></span>
+                                    Переменные и типы данных
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-syntax-2">
+                                    <span class="checkmark"></span>
+                                    Операторы и выражения
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-syntax-3">
+                                    <span class="checkmark"></span>
+                                    Условные конструкции (if/else)
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-syntax-4">
+                                    <span class="checkmark"></span>
+                                    Циклы (for, while)
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-syntax-5">
+                                    <span class="checkmark"></span>
+                                    Функции и параметры
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-syntax-6">
+                                    <span class="checkmark"></span>
+                                    Списки, кортежи, словари, множества
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Системы контроля версий</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-git-1">
+                                    <span class="checkmark"></span>
+                                    Git основы
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-git-2">
+                                    <span class="checkmark"></span>
+                                    GitHub/GitLab
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-git-3">
+                                    <span class="checkmark"></span>
+                                    Ветвление и слияние
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-git-4">
+                                    <span class="checkmark"></span>
+                                    Pull requests
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Advanced Python -->
+                <div class="phase-card" data-phase="2" data-language="python">
+                    <div class="phase-header" onclick="togglePhase(2)">
+                        <div class="phase-number">2</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">🐍 Продвинутый Python</h2>
+                            <p class="phase-duration">2-3 месяца</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-2-content">
+                        <div class="topic-section">
+                            <h3 class="topic-title">ООП в Python</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-oop-1">
+                                    <span class="checkmark"></span>
+                                    Классы и объекты
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-oop-2">
+                                    <span class="checkmark"></span>
+                                    Наследование
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-oop-3">
+                                    <span class="checkmark"></span>
+                                    Инкапсуляция
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-oop-4">
+                                    <span class="checkmark"></span>
+                                    Полиморфизм
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-oop-5">
+                                    <span class="checkmark"></span>
+                                    Магические методы
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Продвинутые концепции</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-advanced-1">
+                                    <span class="checkmark"></span>
+                                    Декораторы
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-advanced-2">
+                                    <span class="checkmark"></span>
+                                    Генераторы и итераторы
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-advanced-3">
+                                    <span class="checkmark"></span>
+                                    Контекстные менеджеры
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-advanced-4">
+                                    <span class="checkmark"></span>
+                                    Работа с файлами и исключениями
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-advanced-5">
+                                    <span class="checkmark"></span>
+                                    Модули и пакеты
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-advanced-6">
+                                    <span class="checkmark"></span>
+                                    Регулярные выражения
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Виртуальное окружение</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-venv-1">
+                                    <span class="checkmark"></span>
+                                    venv
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-venv-2">
+                                    <span class="checkmark"></span>
+                                    virtualenv
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-venv-3">
+                                    <span class="checkmark"></span>
+                                    Poetry
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-venv-4">
+                                    <span class="checkmark"></span>
+                                    UV (современный менеджер)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Async/Await</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-async-1">
+                                    <span class="checkmark"></span>
+                                    asyncio основы
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-async-2">
+                                    <span class="checkmark"></span>
+                                    Корутины
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-async-3">
+                                    <span class="checkmark"></span>
+                                    Event loop
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="python-async-4">
+                                    <span class="checkmark"></span>
+                                    async/await синтаксис
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Python Frameworks -->
+                <div class="phase-card framework-phase" data-phase="3" data-language="python" data-is-framework="true">
+                    <div class="phase-header" onclick="togglePhase(3)">
+                        <div class="phase-number">3</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">📚 Фреймворки Python</h2>
+                            <p class="phase-duration">3-4 месяца</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-3-content">
+                        <div class="framework-section">
+                            <h3 class="topic-title">🌐 Веб-разработка</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Django</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-django">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Full-stack фреймворк</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">ORM</span>
+                                        <span class="feature-tag">Админ-панель</span>
+                                        <span class="feature-tag">Аутентификация</span>
+                                    </div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Flask</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-flask">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Микрофреймворк</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Легковесный</span>
+                                        <span class="feature-tag">Гибкий</span>
+                                        <span class="feature-tag">Jinja2</span>
+                                    </div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>FastAPI</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-fastapi">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Современный API</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Async</span>
+                                        <span class="feature-tag">Автодокументация</span>
+                                        <span class="feature-tag">Pydantic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="framework-section">
+                            <h3 class="topic-title">🤖 Data Science и ML</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>NumPy</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-numpy">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Численные вычисления</p>
+                                </div>
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>Pandas</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-pandas">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Анализ данных</p>
+                                </div>
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>Matplotlib &amp; Seaborn</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-matplotlib">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Визуализация</p>
+                                </div>
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>Scikit-learn</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-sklearn">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Классическое ML</p>
+                                </div>
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>TensorFlow</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-tensorflow">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Deep Learning (Google)</p>
+                                </div>
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>PyTorch</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-pytorch">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Deep Learning (Meta)</p>
+                                </div>
+                                <div class="framework-card small">
+                                    <div class="framework-header">
+                                        <h4>Keras</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-keras">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">High-level DL API</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="framework-section">
+                            <h3 class="topic-title">🧪 Тестирование</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>pytest</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-pytest">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Современный фреймворк</p>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>unittest</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-unittest">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Встроенный модуль</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Rust Basics -->
+                <div class="phase-card" data-phase="4" data-language="rust">
+                    <div class="phase-header" onclick="togglePhase(4)">
+                        <div class="phase-number">4</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">🦀 Основы Rust</h2>
+                            <p class="phase-duration">2-3 месяца</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-4-content">
+                        <div class="topic-section">
+                            <h3 class="topic-title">Установка Rust</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-setup-1">
+                                    <span class="checkmark"></span>
+                                    rustup - установщик
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-setup-2">
+                                    <span class="checkmark"></span>
+                                    cargo - менеджер пакетов
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-setup-3">
+                                    <span class="checkmark"></span>
+                                    IDE: VS Code, RustRover
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Синтаксис Rust</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-syntax-1">
+                                    <span class="checkmark"></span>
+                                    Переменные и mut
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-syntax-2">
+                                    <span class="checkmark"></span>
+                                    Типы данных
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-syntax-3">
+                                    <span class="checkmark"></span>
+                                    Функции
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-syntax-4">
+                                    <span class="checkmark"></span>
+                                    Pattern matching
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-syntax-5">
+                                    <span class="checkmark"></span>
+                                    Enums и структуры
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Система владения</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-ownership-1">
+                                    <span class="checkmark"></span>
+                                    Ownership
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-ownership-2">
+                                    <span class="checkmark"></span>
+                                    Borrowing
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-ownership-3">
+                                    <span class="checkmark"></span>
+                                    Ссылки (&amp;T, &amp;mut T)
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-ownership-4">
+                                    <span class="checkmark"></span>
+                                    Lifetimes
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-ownership-5">
+                                    <span class="checkmark"></span>
+                                    Move семантика
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Обработка ошибок</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-errors-1">
+                                    <span class="checkmark"></span>
+                                    Result&lt;T, E&gt;
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-errors-2">
+                                    <span class="checkmark"></span>
+                                    Option&lt;T&gt;
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-errors-3">
+                                    <span class="checkmark"></span>
+                                    ? оператор
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Advanced Rust -->
+                <div class="phase-card" data-phase="5" data-language="rust">
+                    <div class="phase-header" onclick="togglePhase(5)">
+                        <div class="phase-number">5</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">🦀 Продвинутый Rust</h2>
+                            <p class="phase-duration">2-3 месяца</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-5-content">
+                        <div class="topic-section">
+                            <h3 class="topic-title">Продвинутые концепции</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-advanced-1">
+                                    <span class="checkmark"></span>
+                                    Traits
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-advanced-2">
+                                    <span class="checkmark"></span>
+                                    Generics
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-advanced-3">
+                                    <span class="checkmark"></span>
+                                    Умные указатели (Box, Rc, Arc)
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-advanced-4">
+                                    <span class="checkmark"></span>
+                                    Closures
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-advanced-5">
+                                    <span class="checkmark"></span>
+                                    Итераторы
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-advanced-6">
+                                    <span class="checkmark"></span>
+                                    Макросы
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Многопоточность</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-threading-1">
+                                    <span class="checkmark"></span>
+                                    Threads
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-threading-2">
+                                    <span class="checkmark"></span>
+                                    Send и Sync traits
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-threading-3">
+                                    <span class="checkmark"></span>
+                                    Mutex и Arc
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-threading-4">
+                                    <span class="checkmark"></span>
+                                    Channels (mpsc)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Async/Await в Rust</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-async-1">
+                                    <span class="checkmark"></span>
+                                    async/await синтаксис
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-async-2">
+                                    <span class="checkmark"></span>
+                                    Future trait
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-async-3">
+                                    <span class="checkmark"></span>
+                                    Tokio runtime
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">Тестирование</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-testing-1">
+                                    <span class="checkmark"></span>
+                                    cargo test
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-testing-2">
+                                    <span class="checkmark"></span>
+                                    Юнит-тесты
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="rust-testing-3">
+                                    <span class="checkmark"></span>
+                                    Интеграционные тесты
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 6: Rust Frameworks -->
+                <div class="phase-card framework-phase" data-phase="6" data-language="rust" data-is-framework="true">
+                    <div class="phase-header" onclick="togglePhase(6)">
+                        <div class="phase-number">6</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">📚 Фреймворки Rust</h2>
+                            <p class="phase-duration">3-4 месяца</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-6-content">
+                        <div class="framework-section">
+                            <h3 class="topic-title">🌐 Веб-разработка</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Actix-web</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-actix">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Высокопроизводительный</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">500K+ req/sec</span>
+                                        <span class="feature-tag">WebSockets</span>
+                                        <span class="feature-tag">HTTP/2</span>
+                                    </div>
+                                    <div class="framework-stars">22.7k ⭐</div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Axum</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-axum">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">От создателей Tokio</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Type-safe</span>
+                                        <span class="feature-tag">Tower middleware</span>
+                                        <span class="feature-tag">Async-first</span>
+                                    </div>
+                                    <div class="framework-stars">21.1k ⭐</div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Rocket</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-rocket">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Зрелый фреймворк</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Type-safe</span>
+                                        <span class="feature-tag">Templating</span>
+                                        <span class="feature-tag">Testing</span>
+                                    </div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Warp</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-warp">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Композируемый</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Filter-based</span>
+                                        <span class="feature-tag">Hyper-powered</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="framework-section">
+                            <h3 class="topic-title">⚡ Async Runtime</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Tokio</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-tokio">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Популярный runtime</p>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>async-std</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-async-std">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Альтернативный runtime</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="framework-section">
+                            <h3 class="topic-title">🗄️ Базы данных</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Diesel</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-diesel">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">ORM для Rust</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Type-safe</span>
+                                        <span class="feature-tag">Migrations</span>
+                                        <span class="feature-tag">PostgreSQL/MySQL/SQLite</span>
+                                    </div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>SQLx</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-sqlx">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Async SQL toolkit</p>
+                                    <div class="framework-features">
+                                        <span class="feature-tag">Compile-time проверки</span>
+                                        <span class="feature-tag">Async</span>
+                                        <span class="feature-tag">Быстрее</span>
+                                    </div>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>SeaORM</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-seaorm">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Async ORM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="framework-section">
+                            <h3 class="topic-title">🖥️ GUI</h3>
+                            <div class="framework-grid">
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Tauri</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-tauri">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Desktop приложения</p>
+                                </div>
+                                <div class="framework-card">
+                                    <div class="framework-header">
+                                        <h4>Iced</h4>
+                                        <label class="framework-checkbox">
+                                            <input type="checkbox" data-item="framework-iced">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <p class="framework-desc">Нативный GUI</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 7: Specialization -->
+                <div class="phase-card" data-phase="7" data-language="both">
+                    <div class="phase-header" onclick="togglePhase(7)">
+                        <div class="phase-number">7</div>
+                        <div class="phase-info">
+                            <h2 class="phase-title">🚀 Специализация и проекты</h2>
+                            <p class="phase-duration">непрерывно</p>
+                        </div>
+                        <div class="phase-toggle">▼</div>
+                    </div>
+                    <div class="phase-content" id="phase-7-content">
+                        <div class="topic-section">
+                            <h3 class="topic-title">🐍 Проекты Python</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-python-1">
+                                    <span class="checkmark"></span>
+                                    REST API с FastAPI
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-python-2">
+                                    <span class="checkmark"></span>
+                                    ML модель
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-python-3">
+                                    <span class="checkmark"></span>
+                                    Веб-приложение Django
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-python-4">
+                                    <span class="checkmark"></span>
+                                    Data analysis с Pandas
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">🦀 Проекты Rust</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-rust-1">
+                                    <span class="checkmark"></span>
+                                    CLI утилита
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-rust-2">
+                                    <span class="checkmark"></span>
+                                    Веб-сервис Actix/Axum
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-rust-3">
+                                    <span class="checkmark"></span>
+                                    Системный инструмент
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="project-rust-4">
+                                    <span class="checkmark"></span>
+                                    WebAssembly приложение
+                                </label>
+                            </div>
+                        </div>
+                        <div class="topic-section">
+                            <h3 class="topic-title">🔗 Интеграция</h3>
+                            <div class="topic-items">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="integration-1">
+                                    <span class="checkmark"></span>
+                                    PyO3 - Rust для Python
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" data-item="integration-2">
+                                    <span class="checkmark"></span>
+                                    Python extensions на Rust
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Comparison Modal -->
+    <div class="modal" id="comparison-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚖️ Python vs Rust</h2>
+                <button class="modal-close" onclick="closeComparison()">&times;</button>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-row header">
+                    <div class="comparison-aspect">Аспект</div>
+                    <div class="comparison-python">🐍 Python</div>
+                    <div class="comparison-rust">🦀 Rust</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-aspect">Система типов</div>
+                    <div class="comparison-python">Динамическая</div>
+                    <div class="comparison-rust">Статическая строгая</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-aspect">Память</div>
+                    <div class="comparison-python">Garbage collector</div>
+                    <div class="comparison-rust">Ownership, без GC</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-aspect">Производительность</div>
+                    <div class="comparison-python">Умеренная</div>
+                    <div class="comparison-rust">Высокая</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-aspect">Кривая обучения</div>
+                    <div class="comparison-python">Пологая</div>
+                    <div class="comparison-rust">Крутая</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="comparison-aspect">Async</div>
+                    <div class="comparison-python">asyncio, GIL</div>
+                    <div class="comparison-rust">Tokio, без GIL</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

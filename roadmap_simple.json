@@ -1,0 +1,220 @@
+{
+  "title": "Дорожная карта изучения Python и Rust",
+  "phases": [
+    {
+      "id": 1,
+      "name": "Основы Python",
+      "duration": "1-2 месяца",
+      "language": "python",
+      "topics": [
+        {
+          "name": "Установка и настройка",
+          "items": [
+            "Python 3.10+ с официального сайта",
+            "IDE: PyCharm, VS Code, Jupyter Notebook",
+            "pip и управление пакетами",
+            "Git и GitHub"
+          ]
+        },
+        {
+          "name": "Синтаксис Python",
+          "items": [
+            "Переменные и типы данных",
+            "Условные конструкции (if/else)",
+            "Циклы (for, while)",
+            "Функции",
+            "Списки, словари, кортежи"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Продвинутый Python",
+      "duration": "2-3 месяца",
+      "language": "python",
+      "topics": [
+        {
+          "name": "ООП в Python",
+          "items": [
+            "Классы и объекты",
+            "Наследование",
+            "Инкапсуляция и полиморфизм",
+            "Магические методы"
+          ]
+        },
+        {
+          "name": "Продвинутые концепции",
+          "items": [
+            "Декораторы",
+            "Генераторы и итераторы",
+            "Контекстные менеджеры",
+            "Async/await"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Фреймворки Python",
+      "duration": "3-4 месяца",
+      "language": "python",
+      "topics": [
+        {
+          "name": "Веб-разработка",
+          "frameworks": [
+            {
+              "name": "Django",
+              "desc": "Full-stack фреймворк"
+            },
+            {
+              "name": "Flask",
+              "desc": "Микрофреймворк"
+            },
+            {
+              "name": "FastAPI",
+              "desc": "Современный async API"
+            }
+          ]
+        },
+        {
+          "name": "Data Science",
+          "frameworks": [
+            {
+              "name": "NumPy",
+              "desc": "Численные вычисления"
+            },
+            {
+              "name": "Pandas",
+              "desc": "Анализ данных"
+            },
+            {
+              "name": "Scikit-learn",
+              "desc": "Machine Learning"
+            },
+            {
+              "name": "TensorFlow",
+              "desc": "Deep Learning"
+            },
+            {
+              "name": "PyTorch",
+              "desc": "Deep Learning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Основы Rust",
+      "duration": "2-3 месяца",
+      "language": "rust",
+      "topics": [
+        {
+          "name": "Установка Rust",
+          "items": [
+            "rustup - установщик",
+            "cargo - менеджер пакетов",
+            "IDE: VS Code, RustRover"
+          ]
+        },
+        {
+          "name": "Система владения",
+          "items": [
+            "Ownership",
+            "Borrowing",
+            "Lifetimes",
+            "Result и Option"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Продвинутый Rust",
+      "duration": "2-3 месяца",
+      "language": "rust",
+      "topics": [
+        {
+          "name": "Продвинутые концепции",
+          "items": [
+            "Traits",
+            "Generics",
+            "Умные указатели (Box, Rc, Arc)",
+            "Closures"
+          ]
+        },
+        {
+          "name": "Async/Await",
+          "items": [
+            "Future trait",
+            "Tokio runtime",
+            "Async функции"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Фреймворки Rust",
+      "duration": "3-4 месяца",
+      "language": "rust",
+      "topics": [
+        {
+          "name": "Веб-разработка",
+          "frameworks": [
+            {
+              "name": "Actix-web",
+              "desc": "Высокопроизводительный"
+            },
+            {
+              "name": "Axum",
+              "desc": "От создателей Tokio"
+            },
+            {
+              "name": "Rocket",
+              "desc": "Type-safe"
+            }
+          ]
+        },
+        {
+          "name": "Базы данных",
+          "frameworks": [
+            {
+              "name": "Diesel",
+              "desc": "ORM"
+            },
+            {
+              "name": "SQLx",
+              "desc": "Async SQL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Проекты и специализация",
+      "duration": "непрерывно",
+      "language": "both",
+      "topics": [
+        {
+          "name": "Проекты Python",
+          "items": [
+            "REST API с FastAPI",
+            "ML модель",
+            "Data analysis"
+          ]
+        },
+        {
+          "name": "Проекты Rust",
+          "items": [
+            "CLI утилита",
+            "Веб-сервис",
+            "Системный инструмент"
+          ]
+        }
+      ]
+    }
+  ]
+}
